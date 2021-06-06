@@ -17,17 +17,26 @@ class MenuList extends Component {
 
     render() {
       const items = this.props.items.map((item) => (
-        <li key={item.name}>
-        <p>{item.name}</p>
-        <p>{item.price}</p>
-        <p>{item.description}</p>
-        </li>
+        <tr key={item.name}>
+        <td>{item.name}</td>
+        <td>{item.price}</td>
+        <td>{item.description}</td>
+        </tr>
       ));
 
         return(
-          <ul>{ items }</ul>
+          <table>
+          { items }
+          </table>
         )
       }
     }
 
   export default MenuList;
+
+  // <tr>
+  //     <td>USA</td>
+  //     <td>Washington, D.C.</td>
+  //     <td>309 million</td>
+  //     <td>English</td>
+  //   </tr>

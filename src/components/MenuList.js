@@ -1,44 +1,40 @@
 import { Component } from 'react';
+import MenuItem from './MenuItem';
+
 class MenuList extends Component {
-      constructor(props) {
-      super(props);
-      this.state = {
-        category: '',
-        price: '',
-        selected: '',
-        name: '',
-        description: '',
-      }
-      this.saveItem = this.saveItem.bind(this);
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selection: 'pizzas',
     }
-    saveItem() {
-      this.setState({ category: '', price: '', selected: '', name: '', description: '', });
-    }
+  }
 
     render() {
-      const items = this.props.items.map((item) => (
-        <tr key={item.name}>
-        <th>{item.name.category}</th>
-        <td>{item.name}</td>
-        <td>{item.description}</td>
-        <td><button>{item.price}</button></td>
-        </tr>
+      // const categories = ['pizzas', 'desserts', 'drinks'];
+      const categories = this.props.items.map(item => item.category) // an array of categories (duplicates exist)
+      const uniqueCategories = [...new Set(categories)]; // an array of categories (no duplicates)
 
+      const headings = uniqueCategories.map(category => (
+        <button key={category} onClick={() => this.setState({ selection: category })}>{category}</button>
       ));
 
-        return(
-          <table>
-            <tr>
-              <td></td>
-              <td>Name</td>
-              <td>Description</td>
-              <td>Price</td>
-            </tr>
-          { items }
-          </table>
-        )
-      }
+      const items = this.props.items
+        .filter(item => item.category === this.state.selection)
+        .map((item) => <MenuItem item={item} addToOrder={this.props.addToOrder}/>);
+
+      return(
+        <>
+          <h2>Menu:</h2>
+          {headings}
+          <ul>
+              { items }
+          </ul>
+        </>
+      )
     }
+  }
 
   export default MenuList;
 

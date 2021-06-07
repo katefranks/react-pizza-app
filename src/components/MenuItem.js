@@ -1,51 +1,17 @@
-// import { Component } from 'react';
-// class MenuItem extends Component {
-// constructor(props) {
-//   super(props);
-//   this.handleSelected = this.handleSelected.bind(this);
-//   this.state = {isSelected: false};
-// }
-//
-// handleSelected() {
-//   this.setState({isSelected: true});
-// }
-//
-// render() {
-//   const isSelected = this.state.isSelected;
-//   let priceButton;
-//   if (isSelected) {
-//     priceButton = <priceButton onClick={this.handleSelected} />;
-//   }
-//
-//
-//   return (
-//     <div>
-//       < isSelected={isSelected} />
-//       {button}
-//     </div>
-//   );
-// }
-// }
-//
-// export default MenuItem;
+function MenuItem(props) {
 
+  const item = props.item;
 
-//       const item = this.props.item;
-//       const name = this.props.item.name;
-//
-//       // selected ?
-//       //   item.name :
-//       //   <span style={{color: 'red'}}>
-//       //     {item.name}
-//       //   </span>;
-//
-//       return (
-//         <tr>
-//           <td>{name}</td>
-//           <td>{item.price}</td>
-//         </tr>
-//       );
-//     }
-// }
-//
-// export default MenuItem;
+  // const {name, description, price} = props.item;
+
+  return(
+    <li key={item.name}>
+      <p>{item.name}</p>
+      <p>{item.description}</p>
+      <p><button>{item.price}</button></p>
+      <button onClick={() => props.addToOrder(props.item)}>Add to order</button>
+    </li>
+  )
+}
+
+export default MenuItem;

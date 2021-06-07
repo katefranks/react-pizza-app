@@ -7,12 +7,14 @@ function Order(props) {
     </li>
   ));
 
-  // const subtotal = props.order.reduce()
+  const subtotal = props.order.reduce((acc, i) => acc + i.price, 0);
 
   return (
     <>
+    <div className="order-container">
       <ul>{items}</ul>
-      <div>${12}</div>
+      <div>${subtotal}</div>
+    </div>
     </>
   )
 }

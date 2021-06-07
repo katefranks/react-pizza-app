@@ -23,6 +23,10 @@ td {
   padding: 10px;
 }
 
+.order-container{
+  border: 1px solid black;
+}
+
 /*
 div {
   display: flex;

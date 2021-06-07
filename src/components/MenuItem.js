@@ -8,7 +8,7 @@ function MenuItem(props) {
     <li key={item.name}>
       <p>{item.name}</p>
       <p>{item.description}</p>
-      <p><button>{item.price}</button></p>
+      <p><button>${item.price}</button></p>
       <button onClick={() => props.addToOrder(props.item)}>Add to order</button>
     </li>
   )

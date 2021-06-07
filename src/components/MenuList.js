@@ -18,14 +18,22 @@ class MenuList extends Component {
     render() {
       const items = this.props.items.map((item) => (
         <tr key={item.name}>
+        <th>{item.name.category}</th>
         <td>{item.name}</td>
-        <td>{item.price}</td>
         <td>{item.description}</td>
+        <td><button>{item.price}</button></td>
         </tr>
+
       ));
 
         return(
           <table>
+            <tr>
+              <td></td>
+              <td>Name</td>
+              <td>Description</td>
+              <td>Price</td>
+            </tr>
           { items }
           </table>
         )

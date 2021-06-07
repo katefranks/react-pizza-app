@@ -10,6 +10,7 @@ class App extends Component {
       super(props);
       this.state = {
         items: [],
+        selection: null,
       }
       // this.selectItem = this.selectItem.bind(this);
     }
@@ -36,18 +37,18 @@ class App extends Component {
     this.setState({ items });
 
   }
-
-
   render(){
     return (
-      <div>
+      <div className="main-menu">
+        <h1>Vic's Pizza</h1>
+        <h2>Menu:</h2>
         <MenuList items={this.state.items} />
         <MenuCategory category ={this.props.category} />
       </div>
     );
   }
-}
-
+  }
 export default App;
 
+// <MenuCategory category ={this.props.category} />
 // <MenuItem item={this.props.item} />

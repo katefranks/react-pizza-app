@@ -14,6 +14,7 @@ function Order(props) {
     <div className="order-container">
       <ul>{items}</ul>
       <div>${subtotal}</div>
+      <button onClick ={() => {const { order } = props; localStorage.setItem('order', items);}}>Save Order</button>
     </div>
     </>
   )

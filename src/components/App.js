@@ -127,7 +127,7 @@ class App extends Component {
     return (
       <div className="main-menu">
         <header>
-          <h1>Vic's Pizza</h1>
+          <h1 className="main-header">Vic's Pizza</h1>
         </header>
         <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
         <Order order={this.state.order} />

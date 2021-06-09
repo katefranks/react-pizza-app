@@ -26,7 +26,7 @@ class MenuList extends Component {
 
       return(
         <>
-          <h2>Menu:</h2>
+          <h2 className="menu-header">Menu</h2>
           {headings}
           <ul>
               { items }

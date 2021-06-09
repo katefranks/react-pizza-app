@@ -2,6 +2,28 @@
   text-align: center;
 }
 
+#root{
+  display: flex;
+  justify-content: center;
+}
+
+
+.main-menu{
+  background-color: lavenderblush;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-header{
+  text-align: center;
+}
+
+.menu-header{
+  text-align: center;
+}
+
 table,
 td {
     border: 1px solid #333;
@@ -14,10 +36,6 @@ tfoot {
     color: #fff;
 }
 
-div {
-  margin-left: 30px;
-
-}
 
 td {
   padding: 10px;

@@ -12,17 +12,18 @@ class MenuList extends Component {
   }
 
     render() {
+
       // const categories = ['pizzas', 'desserts', 'drinks'];
       const categories = this.props.items.map(item => item.category) // an array of categories (duplicates exist)
       const uniqueCategories = [...new Set(categories)]; // an array of categories (no duplicates)
 
       const headings = uniqueCategories.map(category => (
-        <button key={category} onClick={() => this.setState({ selection: category })}>{category}</button>
+        <button style={{display: 'flex', flexDirection: 'column', width: '25%', margin: '3px'}} key={category} onClick={() => this.setState({ selection: category })}>{category}</button>
       ));
 
       const items = this.props.items
         .filter(item => item.category === this.state.selection)
-        .map((item) => <MenuItem item={item} addToOrder={this.props.addToOrder}/>);
+        .map((item) => <MenuItem  item={item} addToOrder={this.props.addToOrder}/>);
 
       return(
         <>

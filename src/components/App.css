@@ -5,15 +5,26 @@
 #root{
   display: flex;
   justify-content: center;
+  background-color: #535659;
 }
 
-
 .main-menu{
-  background-color: lavenderblush;
+  background-color: #FFF;;
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+}
+
+li{
+  text-decoration: none;
+
+}
+
+button{
+
 }
 
 .main-header{
@@ -42,6 +53,9 @@ td {
 }
 
 .order-container{
+  background-color: #535659;
+  color: #FFF;
+  padding: 10px 30px;
   border: 1px solid black;
 }
 

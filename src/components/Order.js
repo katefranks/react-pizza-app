@@ -12,9 +12,9 @@ function Order(props) {
   return (
     <>
     <div className="order-container">
-      <h2>Items Added to Order:</h2>
+      <h2 className="add-to-order">Items Added to Order:</h2>
       <ul>{items}</ul>
-      <div>Subtotal = ${subtotal}</div>
+      <div className="add-to-order">Subtotal = ${subtotal}</div>
       <br/>
       <button onClick ={() => {const { order } = props; localStorage.setItem('order', items);}}>Save Order</button>
       <br/>
